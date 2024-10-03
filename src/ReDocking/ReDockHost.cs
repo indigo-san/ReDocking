@@ -42,7 +42,7 @@ public class ReDockHost : ContentControl
         add => AddHandler(ButtonDisplayModeChangedEvent, value);
         remove => RemoveHandler(ButtonDisplayModeChangedEvent, value);
     }
-    
+
     public event EventHandler<SideBarButtonFlyoutRequestedEventArgs> ButtonFlyoutRequested
     {
         add => AddHandler(ButtonFlyoutRequestedEvent, value);
@@ -54,7 +54,7 @@ public class ReDockHost : ContentControl
         var args = new SideBarButtonFlyoutRequestedEventArgs(button, this, ButtonFlyoutRequestedEvent, this);
         RaiseEvent(args);
         if (args.Handled) return;
-        
+
         var flyout = new SideBarButtonMenuFlyout(this);
         if (button.DockLocation?.LeftRight == SideBarLocation.Left)
         {

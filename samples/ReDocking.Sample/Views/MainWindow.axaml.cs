@@ -91,7 +91,7 @@ public partial class MainWindow : Window
 
         e.Handled = true;
     }
-    
+
     internal static ReactiveCollection<ToolWindowViewModel> GetItemsSource(MainWindowViewModel viewModel,
         DockAreaLocation location)
     {
