@@ -24,9 +24,8 @@
 
     <ItemGroup>
         <PackageReference Include="Avalonia" />
-        <PackageReference Include="Avalonia.Xaml.Behaviors" />
-        <PackageReference Include="Avalonia.Xaml.Interactions" />
-        <PackageReference Include="Avalonia.Xaml.Interactivity" />
+        <PackageReference Include="Xaml.Behaviors.Avalonia" />
+        <PackageReference Include="Xaml.Behaviors.Interactivity" />
         <PackageReference Include="Microsoft.SourceLink.GitHub" PrivateAssets="All" />
         <PackageReference Include="System.Reactive" />
     </ItemGroup>
