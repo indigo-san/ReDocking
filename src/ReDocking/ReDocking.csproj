@@ -7,12 +7,12 @@
         <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
         
         <PackageId>ReDocking.Avalonia</PackageId>
-        <Version>1.0.3</Version>
+        <Version>1.0.4</Version>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <Authors>Yuto Terada</Authors>
         <RepositoryType>Git</RepositoryType>
         <PackageTags>c-sharp;avalonia;avaloniaui;dotnet;dock</PackageTags>
-        <AssemblyVersion>1.0.3.0</AssemblyVersion>
+        <AssemblyVersion>1.0.4.0</AssemblyVersion>
         <PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
     
