@@ -56,6 +56,11 @@ public class MainWindowViewModel : IDisposable
         RightUpperTopTools.Add(new ToolWindowViewModel("Notifications", "\uea8f", new NotificationsViewModel()));
         RightUpperBottomTools.Add(new ToolWindowViewModel("Properties", "\ue15e", new PropertiesViewModel()));
         RightLowerBottomTools.Add(new ToolWindowViewModel("Problem", "\ue946", new ProblemViewModel()));
+
+        // Add sample documents for the dynamic docking demo
+        Documents.Add(new DocumentViewModel("Program.cs", "// Main program file\nusing System;\n\nclass Program\n{\n    static void Main()\n    {\n        Console.WriteLine(\"Hello, World!\");\n    }\n}"));
+        Documents.Add(new DocumentViewModel("MainWindow.xaml", "<Window>\n  <Grid>\n    <!-- Content here -->\n  </Grid>\n</Window>"));
+        Documents.Add(new DocumentViewModel("README.md", "# My Project\n\nThis is a sample project demonstrating dynamic dock splitting."));
     }
 
     public ReactiveCollection<ToolWindowViewModel> LeftUpperTopTools { get; } = [];
@@ -91,6 +96,11 @@ public class MainWindowViewModel : IDisposable
     public ReactiveProperty<ToolWindowViewModel?> SelectedRightLowerBottomTool { get; } = new();
 
     public ReactiveCollection<ToolWindowViewModel> FloatingWindows { get; } = [];
+
+    /// <summary>
+    /// Documents displayed in the dynamic docking area.
+    /// </summary>
+    public ReactiveCollection<DocumentViewModel> Documents { get; } = [];
 
     public void Dispose()
     {

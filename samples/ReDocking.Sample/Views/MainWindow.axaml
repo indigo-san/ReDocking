@@ -45,6 +45,17 @@
             <DataTemplate x:Key="ToolContentDataTemplate" x:DataType="viewModels:ToolWindowViewModel">
                 <ContentControl Content="{Binding Content.Value}" />
             </DataTemplate>
+            <!-- Templates for DockTabGroup -->
+            <DataTemplate x:Key="DocumentTabHeaderTemplate" x:DataType="viewModels:DocumentViewModel">
+                <TextBlock Text="{Binding Title.Value}" />
+            </DataTemplate>
+            <DataTemplate x:Key="DocumentTabContentTemplate" x:DataType="viewModels:DocumentViewModel">
+                <Border Padding="8">
+                    <TextBox AcceptsReturn="True"
+                             Text="{Binding Content.Value}"
+                             TextWrapping="Wrap" />
+                </Border>
+            </DataTemplate>
         </ResourceDictionary>
     </Window.Resources>
     <Window.Styles>
@@ -153,11 +164,10 @@
                                         <ContentControl Content="{Binding Content.Value}" />
                                     </DataTemplate>
                                 </dock:ReDock.RightContentTemplate>
-                                <ui:TabView>
-                                    <ui:TabViewItem Header="File 1" />
-                                    <ui:TabViewItem Header="File 2" />
-                                    <ui:TabViewItem Header="File 3" />
-                                </ui:TabView>
+                                <!-- Dynamic docking area with DockTabGroup -->
+                                <dock:DockTabGroup ItemsSource="{Binding Documents}"
+                                                   HeaderTemplate="{StaticResource DocumentTabHeaderTemplate}"
+                                                   ContentTemplate="{StaticResource DocumentTabContentTemplate}" />
                             </dock:ReDock>
                         </dock:VerticallySplittedView.TopContent>
                         <dock:VerticallySplittedView.BottomContent>
