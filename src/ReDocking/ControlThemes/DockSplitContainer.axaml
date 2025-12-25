@@ -1,0 +1,53 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="using:ReDocking">
+    <Design.PreviewWith>
+        <controls:DockSplitContainer Width="400" Height="300">
+            <controls:DockSplitContainer.First>
+                <Border Background="LightBlue">
+                    <TextBlock Text="First" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </Border>
+            </controls:DockSplitContainer.First>
+            <controls:DockSplitContainer.Second>
+                <Border Background="LightGreen">
+                    <TextBlock Text="Second" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </Border>
+            </controls:DockSplitContainer.Second>
+        </controls:DockSplitContainer>
+    </Design.PreviewWith>
+
+    <ControlTheme x:Key="DockSplitContainerThumb" TargetType="Thumb">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border Background="{TemplateBinding Background}">
+                    <Border Background="{DynamicResource ReDockingDividerBrush}" />
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+
+    <ControlTheme x:Key="{x:Type controls:DockSplitContainer}" TargetType="controls:DockSplitContainer">
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Panel Name="PART_Root" Background="Transparent">
+                    <ContentPresenter Name="PART_FirstPresenter"
+                                      HorizontalAlignment="Left"
+                                      VerticalAlignment="Top"
+                                      HorizontalContentAlignment="Stretch"
+                                      VerticalContentAlignment="Stretch"
+                                      Content="{TemplateBinding First}" />
+
+                    <ContentPresenter Name="PART_SecondPresenter"
+                                      HorizontalAlignment="Left"
+                                      VerticalAlignment="Top"
+                                      HorizontalContentAlignment="Stretch"
+                                      VerticalContentAlignment="Stretch"
+                                      Content="{TemplateBinding Second}" />
+
+                    <Thumb Name="PART_Thumb" Theme="{StaticResource DockSplitContainerThumb}" />
+                </Panel>
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+</ResourceDictionary>

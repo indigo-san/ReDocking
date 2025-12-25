@@ -1,0 +1,40 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="using:ReDocking">
+
+    <ControlTheme x:Key="{x:Type controls:DockTabItem}" TargetType="controls:DockTabItem">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="{DynamicResource ReDockingSideBarButtonForeground}" />
+        <Setter Property="Padding" Value="8,4" />
+        <Setter Property="MinHeight" Value="28" />
+        <Setter Property="CornerRadius" Value="{DynamicResource ReDockingSideBarButtonCornerRadius}" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border Name="PART_Border"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="{TemplateBinding CornerRadius}"
+                        Padding="{TemplateBinding Padding}">
+                    <ContentPresenter Name="PART_ContentPresenter"
+                                      Content="{TemplateBinding Content}"
+                                      ContentTemplate="{TemplateBinding ContentTemplate}"
+                                      HorizontalContentAlignment="Center"
+                                      VerticalContentAlignment="Center" />
+                </Border>
+            </ControlTemplate>
+        </Setter>
+        <Style Selector="^:pointerover /template/ Border#PART_Border">
+            <Setter Property="Background" Value="{DynamicResource ReDockingSideBarButtonBackgroundPointerOver}" />
+        </Style>
+        <Style Selector="^:pressed /template/ Border#PART_Border">
+            <Setter Property="Background" Value="{DynamicResource ReDockingSideBarButtonBackgroundPressed}" />
+        </Style>
+        <Style Selector="^[IsSelected=True] /template/ Border#PART_Border">
+            <Setter Property="Background" Value="{DynamicResource ReDockingSideBarButtonBackgroundChecked}" />
+        </Style>
+        <Style Selector="^[IsSelected=True]">
+            <Setter Property="Foreground" Value="{DynamicResource ReDockingSideBarButtonForegroundChecked}" />
+        </Style>
+    </ControlTheme>
+</ResourceDictionary>

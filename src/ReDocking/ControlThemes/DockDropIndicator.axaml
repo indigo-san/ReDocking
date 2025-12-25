@@ -1,0 +1,77 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="using:ReDocking">
+
+    <ControlTheme x:Key="{x:Type controls:DockDropIndicator}" TargetType="controls:DockDropIndicator">
+        <Setter Property="IsHitTestVisible" Value="False" />
+        <Setter Property="IndicatorBrush" Value="{DynamicResource ReDockingDropIndicatorBrush}" />
+        <Setter Property="HighlightBrush" Value="{DynamicResource ReDockingDropIndicatorHighlightBrush}" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Panel Name="PART_Root">
+                    <!-- Preview Overlay -->
+                    <Border Name="PART_PreviewOverlay"
+                            Background="{DynamicResource ReDockingGhostBackground}"
+                            IsVisible="False"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top" />
+
+                    <!-- Left Indicator -->
+                    <Border Name="PART_LeftIndicator"
+                            Background="{TemplateBinding IndicatorBrush}"
+                            CornerRadius="4"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top">
+                        <PathIcon Data="M15,19V5L7,12L15,19Z"
+                                  Foreground="{DynamicResource ReDockingDropIndicatorIconBrush}"
+                                  Width="20" Height="20" />
+                    </Border>
+
+                    <!-- Right Indicator -->
+                    <Border Name="PART_RightIndicator"
+                            Background="{TemplateBinding IndicatorBrush}"
+                            CornerRadius="4"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top">
+                        <PathIcon Data="M9,5V19L17,12L9,5Z"
+                                  Foreground="{DynamicResource ReDockingDropIndicatorIconBrush}"
+                                  Width="20" Height="20" />
+                    </Border>
+
+                    <!-- Top Indicator -->
+                    <Border Name="PART_TopIndicator"
+                            Background="{TemplateBinding IndicatorBrush}"
+                            CornerRadius="4"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top">
+                        <PathIcon Data="M5,15H19L12,7L5,15Z"
+                                  Foreground="{DynamicResource ReDockingDropIndicatorIconBrush}"
+                                  Width="20" Height="20" />
+                    </Border>
+
+                    <!-- Bottom Indicator -->
+                    <Border Name="PART_BottomIndicator"
+                            Background="{TemplateBinding IndicatorBrush}"
+                            CornerRadius="4"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top">
+                        <PathIcon Data="M19,9H5L12,17L19,9Z"
+                                  Foreground="{DynamicResource ReDockingDropIndicatorIconBrush}"
+                                  Width="20" Height="20" />
+                    </Border>
+
+                    <!-- Center Indicator -->
+                    <Border Name="PART_CenterIndicator"
+                            Background="{TemplateBinding IndicatorBrush}"
+                            CornerRadius="4"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top">
+                        <PathIcon Data="M3,3H21V21H3V3M5,5V19H19V5H5Z"
+                                  Foreground="{DynamicResource ReDockingDropIndicatorIconBrush}"
+                                  Width="20" Height="20" />
+                    </Border>
+                </Panel>
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+</ResourceDictionary>

@@ -27,6 +27,9 @@
                     <SolidColorBrush x:Key="ReDockingSideBarButtonForegroundDisabled">#5C000000</SolidColorBrush>
 
                     <SolidColorBrush x:Key="ReDockingGhostBackground">#06000000</SolidColorBrush>
+                    <SolidColorBrush x:Key="ReDockingDropIndicatorBrush">#CC3B82F7</SolidColorBrush>
+                    <SolidColorBrush x:Key="ReDockingDropIndicatorHighlightBrush">#FF3B82F7</SolidColorBrush>
+                    <SolidColorBrush x:Key="ReDockingDropIndicatorIconBrush">#FFFFFF</SolidColorBrush>
                 </ResourceDictionary>
                 <ResourceDictionary x:Key="Dark">
                     <SolidColorBrush x:Key="ReDockingDividerBrush">#15FFFFFF</SolidColorBrush>
@@ -44,6 +47,9 @@
                     <SolidColorBrush x:Key="ReDockingSideBarButtonForegroundDisabled">#5DFFFFFF</SolidColorBrush>
 
                     <SolidColorBrush x:Key="ReDockingGhostBackground">#0AFFFFFF</SolidColorBrush>
+                    <SolidColorBrush x:Key="ReDockingDropIndicatorBrush">#CC3B82F7</SolidColorBrush>
+                    <SolidColorBrush x:Key="ReDockingDropIndicatorHighlightBrush">#FF3B82F7</SolidColorBrush>
+                    <SolidColorBrush x:Key="ReDockingDropIndicatorIconBrush">#FFFFFF</SolidColorBrush>
                 </ResourceDictionary>
             </ResourceDictionary.ThemeDictionaries>
             <ResourceDictionary.MergedDictionaries>
@@ -53,6 +59,10 @@
                 <MergeResourceInclude Source="ControlThemes/VerticallySplittedView.axaml" />
                 <MergeResourceInclude Source="ControlThemes/HorizontallySplittedView.axaml" />
                 <MergeResourceInclude Source="ControlThemes/ReDock.axaml" />
+                <MergeResourceInclude Source="ControlThemes/DockSplitContainer.axaml" />
+                <MergeResourceInclude Source="ControlThemes/DockTabGroup.axaml" />
+                <MergeResourceInclude Source="ControlThemes/DockTabItem.axaml" />
+                <MergeResourceInclude Source="ControlThemes/DockDropIndicator.axaml" />
             </ResourceDictionary.MergedDictionaries>
 
             <CornerRadius x:Key="ReDockingSideBarButtonCornerRadius">4</CornerRadius>
