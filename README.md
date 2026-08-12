@@ -1,3 +1,5 @@
+
+
 # ReDocking
 
 ![](https://img.shields.io/github/stars/yuto-trd/ReDocking)
@@ -18,7 +20,7 @@ dotnet add package ReDocking.Avalonia
 
 ## Usage
 
-See [sample projects](samples).
+Open and run the `ReDocking.Sample` project in the `samples/` directory.
 
 ## License
 MIT License
